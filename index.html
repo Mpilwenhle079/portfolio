@@ -7,6 +7,62 @@
   <title>Mpilwenhle Ndlela | Business Analysis Student</title>
   <link rel="stylesheet" href="index.css" />
 </head>
+<button onclick="toggleVoice()" id="voiceToggle" style="margin: 20px; padding: 10px; background-color: #3e89a7; color: white; border: none; border-radius: 6px; cursor: pointer;">
+  🔊 Turn Voice On
+</button>
+<script>
+  let isSpeaking = false;
+  let utterance;
+
+  function toggleVoice() {
+    const button = document.getElementById("voiceToggle");
+
+    if (!isSpeaking) {
+      const text = `
+        Hello, I'm Mpilwenhle Ndlela. Welcome to my digital portfolio.
+        I'm a passionate ICT student specializing in Business Analysis at DUT.
+        I began my academic journey in 2024 after completing matric in 2023.
+        This space reflects my journey—where analytical thinking meets real-world problem solving.
+        I'm currently working on an integrated system project using C#, CSS, and SQL.
+        I work with technologies like C#, HTML, CSS, and SQL to build dynamic, user-friendly systems.
+        This portfolio was built using HTML, CSS, and PHP.
+        In my first year, I studied C# programming, Cyber Security, System Analysis, and Business Analysis.
+        In my second year, I focused on C# MVC architecture, SQL, and advanced database systems.
+        In my third year, I advanced my skills in System Design and Business Analysis.
+
+         Thank you for taking the time to explore my journey. I’m not just seeking a role—I’m ready to bring value, vision, and dedication to your team.
+          Let’s build something meaningful together.
+      `;
+
+      utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.lang = 'en-ZA';
+
+      const voices = speechSynthesis.getVoices();
+      const beastVoice = voices.find(v =>
+        v.name.includes("Google UK English Male") ||
+        v.name.includes("Microsoft David") ||
+        v.name.includes("Alex") // fallback strong male voice
+      );
+
+      if (beastVoice) {
+        utterance.voice = beastVoice;
+      }
+
+      speechSynthesis.speak(utterance);
+      isSpeaking = true;
+      button.textContent = "🔇 Turn Voice Off";
+    } else {
+      speechSynthesis.cancel();
+      isSpeaking = false;
+      button.textContent = "🔊 Turn Voice On";
+    }
+  }
+
+  // Load voices properly
+  window.speechSynthesis.onvoiceschanged = () => {};
+</script>
 <body>
   <header>
     <div class="header-container">
@@ -23,13 +79,21 @@
   </header>
 
   <main>
-    <section class="hero">
-      <h2><b>HELLO I'M</b> MPILWENHLE NDLELA</h2>
-      <p>Welcome to My Digital Portfolio<br>
-      <b>I'm Mpilwenhle Ndlela,</b> a passionate and detail-oriented ICT student specializing in Business Analysis at Durban University of Technology, where I began my academic journey in 2024. I completed my matric in 2023 with a Bachelor’s pass, laying the foundation for my pursuit of excellence in the world of business technology.</p>
-      <p>This space is a reflection of my journey—where analytical thinking meets real-world problem solving. From integrated systems to client-focused solutions, I bring clarity, structure, and innovation to every challenge. Whether you're a recruiter, collaborator, or curious visitor, I invite you to explore my work, discover my skills, and connect with the potential I bring to the future of business technology.</p>
-    </section>
+   <section class="hero">
+    <marquee behavior="scroll" direction="left" scrollamount="4" class="marquee-text">
+  Welcome to my digital portfolio — Discover my journey in IT Business Analysis at DUT 
+</marquee>
+  <div class="intro">
+    <h2><b>HELLO I'M</b> MPILWENHLE NDLELA</h2>
+  
 
+  <p>Welcome to My Digital Portfolio<br>
+    <b>I'm Mpilwenhle Ndlela,</b> a passionate and detail-oriented ICT student specializing in Business Analysis at Durban University of Technology, where I began my academic journey in 2024. I completed my matric in 2023 with a Bachelor’s pass, laying the foundation for my pursuit of excellence in the world of business technology.
+  </p>
+
+  <p>This space is a reflection of my journey—where analytical thinking meets real-world problem solving. From integrated systems to client-focused solutions, I bring clarity, structure, and innovation to every challenge. Whether you're a recruiter, collaborator, or curious visitor, I invite you to explore my work, discover my skills, and connect with the potential I bring to the future of business technology.
+  </p>
+</section>
     <section class="current-project">
       <h2>Current Project</h2>
       <p>I'm currently working on an integrated system project using <b>C#</b>, <b>CSS</b>, and <b>SQL</b>. The goal is to develop a responsive and efficient business solution that manages client data, automates reporting, and enhances decision-making. This project reflects my ability to combine front-end styling with back-end logic and database management.</p>
@@ -70,6 +134,12 @@
       <h3>Third Year</h3>
       <p>In my third year, I delved deeper into <b>System Analysis</b> and <b>System Design</b>, focusing on creating scalable and efficient business solutions. I also advanced my knowledge in <b>Business Analysis</b>, learning how to bridge the gap between business needs and technical implementation.</p>
     </section>
+    <section class="conclusion">
+  <h2>Conclusion</h2>
+  <p>
+    Thank you for taking the time to explore my journey. I’m not just seeking a role—I’m ready to bring value, vision, and dedication to your team. Let’s build something meaningful together.
+  </p>
+</section>
   </main>
 
   <footer>

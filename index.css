@@ -141,3 +141,66 @@ footer {
 .button-group button:hover {
   background-color: #7298b4;
 }
+.hero {
+  padding: 40px;
+  background-color: #f0fdf4;
+  color:  #7298b4;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.typewriter h2 {
+  overflow: hidden;
+  border-right: .15em solid #7badd1;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .1em;
+  animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color:  #2c6e99; }
+}
+.hero p {
+  animation: fadeIn 3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.marquee-text {
+  background-color: #f5f7f8;
+  color: #1c6392;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(238, 236, 236, 0.1);
+}
+.conclusion {
+  background-color: #e8f5e9;
+  padding: 30px;
+  margin-top: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  color: #2d8594;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.conclusion h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #4a7e9c;
+}
+
+.conclusion p {
+  font-size: 18px;
+  line-height: 1.6;
+}
