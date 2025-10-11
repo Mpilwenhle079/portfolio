@@ -15,4 +15,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Sorry, something went wrong. Please try again.";
   }
 }
-?>
