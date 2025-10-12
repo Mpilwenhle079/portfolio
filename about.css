@@ -141,3 +141,17 @@ footer button:hover {
 .email-button:hover {
   background-color: #388e3c;
 }
+.github {
+  color: #333;
+  background-color: #337c9e;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.github:hover {
+  background-color: #e0e0e0;
+}

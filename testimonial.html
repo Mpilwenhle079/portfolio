@@ -6,7 +6,18 @@
   <link rel="stylesheet" href="testimonial.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
+<script>
+  document.querySelectorAll('.testimonial').forEach(testimonial => {
+    testimonial.addEventListener('touchstart', () => {
+      testimonial.classList.add('touched');
+    });
+    testimonial.addEventListener('touchend', () => {
+      setTimeout(() => testimonial.classList.remove('touched'), 1000);
+    });
+  });
+</script>
 <body>
+  <audio id="chimeSound" src="chime.mp3" preload="auto"></audio>
   <header>
     <h1>Testimonials</h1>
     <nav>
@@ -32,34 +43,35 @@
     <section class="testimonial">
       <img src="lecturer.jpg" alt="Lecturer" class="profile-pic">
       <div class="testimonial-content">
+         <p>Mlungisi Ntuli</p>
         <blockquote>
           “He's commitment to excellence is unmatched. Mpilwenhle approaches every project with focus, precision, and a genuine desire to improve business processes through technology.”
         </blockquote>
         <p class="author">– Project Supervisor, Integrated Systems Module</p>
       </div>
-      <p>Mlungisi Ntuli</p>
     </section>
 
     <section class="testimonial">
       <img src="lecturer.jpg" alt="Lecturer" class="profile-pic">
       <div class="testimonial-content">
+         <p>Manelisi Mzobe</p>
         <blockquote>
           “I’ve worked with Mpilwenhle on multiple development projects, and he always brings clarity, structure, and energy to the team. He's analytical thinking and attention to detail make he's a standout contributor.”
         </blockquote>
         <p class="author">– Peer Collaborator</p>
       </div>
-      <p>Manelisi Mzobe</p>
     </section>
 
     <section class="testimonial">
       <img src="mpilenhle.jpg" alt="Lecturer" class="profile-pic">
       <div class="testimonial-content">
+        <p>Mpilenhle Nkosi (Auditor)</p>
         <blockquote>
           “Mpilwenhle is not only hardworking but also highly adaptable. He quickly grasps new tools and methodologies, and he's contributions to our clinic system project were vital to its success.”
         </blockquote>
         <p class="author">– Group Leader, Clinic System Project</p>
       </div>
-      <p>Mpilenhle Nkosi (Auditor)</p>
+      
     </section>
 
     <section class="testimonial">
@@ -75,7 +87,27 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Mpilwenhle Ndlela</p>
+    <p>&copy;  Mpilwenhle Ndlela</p>
   </footer>
+  <script>
+  const chime = document.getElementById("chimeSound");
+
+  document.querySelectorAll('.testimonial').forEach(testimonial => {
+    testimonial.addEventListener('mouseenter', () => {
+      chime.currentTime = 0;
+      chime.play();
+    });
+
+    testimonial.addEventListener('touchstart', () => {
+      testimonial.classList.add('touched');
+      chime.currentTime = 0;
+      chime.play();
+    });
+
+    testimonial.addEventListener('touchend', () => {
+      setTimeout(() => testimonial.classList.remove('touched'), 1000);
+    });
+  });
+</script>
 </body>
 </html>
