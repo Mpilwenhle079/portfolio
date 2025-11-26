@@ -108,7 +108,7 @@ footer {
   text-align: center;
   margin-top: 40px;
   padding: 20px;
-  background-color: #cceeff;
+  background-color: #f4f7f8;
   border-radius: 12px;
   color: #007acc;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -144,4 +144,61 @@ footer {
 
 .transcript-button button:hover {
   background-color: #005fa3;
+}
+/* Menu toggle button */
+.menu-toggle {
+  display: none;
+  background-color: #3e89a7;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #3e89a7;
+  font-weight: bold;
+  padding: 8px 12px;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #e3e6e7;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(242, 244, 245, 0.945);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px;
+    border-bottom: 1px solid #f1f4f5;
+  }
+}
+.nav-links a,
+a.btn {
+  color: white; /* Makes the link text white */
 }

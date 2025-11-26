@@ -8,14 +8,20 @@
 <body> 
   <header>
   <h1>Certificates</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="certificate.html">Certificates & Skills</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="testimonial.html">Testimonials</a>
-    </nav>
-  </header>
+
+  <!-- Menu Toggle Button -->
+  <button id="menuToggle" class="menu-toggle">☰ Menu</button>
+
+  <!-- Navigation Links -->
+  <nav id="mainNav" class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="certificate.html">Certificates & Skills</a>
+    <a href="testimonial.html">Testimonials</a>
+     <a href="feedback.html">Feedback</a>
+      <a href="resume.html">Resume</a>
+  </nav>
+</header>
   <body>
   <section class="certificates">
     <h1>Professional Certificates</h1>
@@ -23,7 +29,7 @@
     <div class="certificate-grid">
       <div class="certificate-card">
         <img src="AI Fandamental.jpg" alt="Certificate 1">
-        <p class="benefit"> “This certifies that Mpilwenhle has successfully completed the AI Fundamentals course, demonstrating foundational knowledge in artificial intelligence concepts, including machine learning, data analysis, and ethical AI practices.”
+        <p class="benefit"> “This certifies that Mpilwenhle has successfully completed the AI Fundamentals course, demonstrating foundational knowledge in artificial intelligence concepts, including  ethical AI practices.”
 </p>
       </div>
       <div class="certificate-card">
@@ -49,18 +55,7 @@
     </div>
   </section>
   <section class="skills">
-  <h1>Technical & Soft Skills</h1>
-  <h3>Combining analytical thinking with creative problem-solving</h3>
-  <ul>
-    <li> C# Programming & MVC Architecture</li>
-    <li> SQL & Advanced Database Management</li>
-    <li> HTML, CSS & Graphic Design</li>
-    <li> Cyber Security Awareness</li>
-    <li> Business & System Analysis</li>
-    <li> Public Speaking & Communication</li>
-    <li> Project Management & Team Leadership</li>
-  </ul>
-
+    <h2>AI Skills Transcript</h2>
   <div class="transcript-button">
     <button onclick="window.open('Transcript-AI Course.pdf', '_blank')">
       📄 View AI Transcript Document
@@ -71,5 +66,13 @@
   <footer>
     <p>&copy; Mpilwenhle Sibiya</p>
   </footer>
+  <script>
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
+
+  menuToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("show");
+  });
+</script>
 </body>
 </html>

@@ -8,16 +8,21 @@
 </head>
 <body>
   <header>
-    <h1>About Me</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="certificate.html">Certificates & Skills</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="testimonial.html">Testimonials</a>
-    </nav>
-  </header>
+  <h1>About Me</h1>
 
+  <!-- Menu Toggle Button -->
+  <button id="menuToggle" class="menu-toggle">☰ Menu</button>
+
+  <!-- Navigation Links -->
+  <nav id="mainNav" class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="certificate.html">Certificates & Skills</a>
+    <a href="testimonial.html">Testimonials</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="resume.html">Resume</a>
+  </nav>
+</header>
   <main>
     <section>
       <p>I began my studies at Durban University of Technology in 2024 after completing matric in 2023 with a Bachelor’s pass. I’m passionate about solving business challenges through technology and analysis.</p>
@@ -72,5 +77,13 @@
     <button onclick="window.location.href='mailto:ndlelampilwenhle49@gmail.com'">Email Me</button>
     <button onclick="window.location.href='tel:+27 79 384 6053'">Call Me</button>
   </footer>
+  <script>
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
+
+  menuToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("show");
+  });
+</script>
 </body>
 </html>
